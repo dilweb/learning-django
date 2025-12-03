@@ -4,6 +4,8 @@ from django.contrib.auth.models import Group
 from django.http import HttpResponse, HttpRequest
 from django.shortcuts import render
 
+from .models import Order
+
 
 def shop_index(request: HttpRequest):
     context = {
@@ -16,3 +18,9 @@ def groups_list(request: HttpRequest):
         "groups": Group.objects.all()
     }
     return render(request, "shopapp/groups-list.html", context=context)
+
+def orders_list(request: HttpRequest):
+    context = {
+        "orders": Order.objects.all()
+    }
+    return render(request, "shopapp/orders-list.html", context=context)
