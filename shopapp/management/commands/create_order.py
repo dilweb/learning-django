@@ -1,7 +1,7 @@
 from django.core.management import BaseCommand
 from django.contrib.auth.models import User
 
-from learning_django.shopapp.models import Order
+from shopapp.models import Order
 
 class Command(BaseCommand):
     """

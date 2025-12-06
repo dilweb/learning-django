@@ -2,19 +2,17 @@ from django.contrib import admin
 
 from .models import Product, Order
 
-# admin.site.register(Product, ProductAdmin)
 
-
-class OrederInLine(admin.TabularInline):
-     model = Order.products.through
+class OrderInline(admin.TabularInline):
+    model = Order.products.through
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     inlines = [
-        OrederInLine,
+        OrderInline,
     ]
-    list_display = "pk", "name", "description_short", "price", "discount"
+    list_display = "pk", "name", "description_short", "price", "discount", "archived"
     list_display_links = "pk", "name"
     ordering = "pk",
     search_fields = "name", "description"
@@ -33,7 +31,7 @@ class ProductAdmin(admin.ModelAdmin):
          })
     ]
 
-def description_short(self, obj: Product) -> str:
+    def description_short(self, obj: Product) -> str:
         if len(obj.description) < 48:
             return obj.description
         return obj.description[:48] + "..."
