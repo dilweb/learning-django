@@ -37,6 +37,7 @@ class ProductAdmin(admin.ModelAdmin):
         return obj.description[:48] + "..."
 
 
+
 class ProductInline(admin.StackedInline):
     model = Product.orders.through
 

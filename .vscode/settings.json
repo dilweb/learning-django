@@ -1,4 +1,5 @@
 {
+<<<<<<< Updated upstream
 	"sqltools.useNodeRuntime": true,
 	"sqltools.connections": [
 		{
@@ -9,3 +10,15 @@
 		}
 	]
 }
+=======
+    "sqltools.useNodeRuntime": true,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:mysite}/db.sqlite3",
+            "name": "mysite"
+        }
+    ]
+}
+>>>>>>> Stashed changes
