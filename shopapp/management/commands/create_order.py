@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 from shopapp.models import Order
 
+
 class Command(BaseCommand):
     """
     Creates command

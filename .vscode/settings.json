@@ -9,3 +9,19 @@
 		}
 	]
 }
+
+"editor.detectIndentation": false,
+"editor.insertSpaces": true,
+"editor.tabSize": 4,
+"editor.formatOnSave": true,
+"files.trimTrailingWhitespace": true
+
+
+"python.formatting.provider": "black",
+"editor.formatOnSave": true
+
+
+"terminal.integrated.env.osx": {
+  "LANG": "en_US.UTF-8",
+  "LC_ALL": "en_US.UTF-8"
+}
