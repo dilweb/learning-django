@@ -1,7 +1,7 @@
 from timeit import default_timer
 
 from django.contrib.auth.models import Group
-from django.http import HttpResponse, HttpRequest
+from django.http import HttpRequest
 from django.shortcuts import render
 
 from .models import Order
@@ -22,3 +22,4 @@ def groups_list(request: HttpRequest):
 def orders_list(request: HttpRequest):
     context = {"orders": Order.objects.all()}
     return render(request, "shopapp/orders-list.html", context=context)
+

@@ -61,6 +61,7 @@ class ProductAdmin(admin.ModelAdmin, ExportAsCSVMixin):
         return obj.description[:48] + "..."
 
 
+
 class ProductInline(admin.StackedInline):
     model = Product.orders.through
 
