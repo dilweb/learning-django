@@ -71,7 +71,7 @@ class OrderAdmin(admin.ModelAdmin):
     inlines = [
         ProductInline,
     ]
-    list_display = "delivery_address", "promo", "created_at", "user_verbose", "zalupa"
+    list_display = "delivery_address", "promo", "created_at", "user_verbose"
 
     def get_queryset(self, request):
         return Order.objects.select_related("user").prefetch_related("products")

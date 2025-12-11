@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
 class Product(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(null=False, blank=True)
@@ -16,5 +15,7 @@ class Order(models.Model):
     promo = models.CharField(max_length=20, null=False, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.PROTECT)
-    products = models.ManyToManyField(Product, related_name="orders")
-    zalupa = models.TextField(null=True, blank=True)
+
+    products = models.ManyToManyField(Product, related_name='orders')
+
+
