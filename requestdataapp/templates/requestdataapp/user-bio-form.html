@@ -1,0 +1,26 @@
+{% extends "requestdataapp/base.html"%}
+
+{% block title %}
+User Bio Form
+{% endblock %}
+
+{% block body %}
+<h1>
+	user bio form
+</h1>
+<div>
+	<form method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit">Submit</button>
+	</form>
+
+	{% if submitted %}
+	<div style="margin-top:1em;color:green">
+		<strong>Submitted!</strong>
+		<pre>{{ submitted_data }}</pre>
+		<p>Results are printed to the server console.</p>
+	</div>
+	{% endif %}
+</div>
+{% endblock %}
